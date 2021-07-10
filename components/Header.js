@@ -6,7 +6,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className='sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white'>
+		<header className='sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white'>
 			<Button
 				color='gray'
 				buttonType='outline'
@@ -47,7 +47,7 @@ const Header = () => {
 				className='cursor-pointer h-12 w-12 rounded-full ml-12'
 				src='https://cdn.dribbble.com/users/1577045/screenshots/4914645/dribble_pic.png?compress=1&resize=400x300'
 			/>
-		</div>
+		</header>
 	);
 };
 
