@@ -5,7 +5,7 @@ import { useSession, getSession, signOut } from 'next-auth/client';
 import { useDocumentOnce } from 'react-firebase-hooks/firestore';
 
 import { db } from '../../firebase';
-// import TextEditor from '../../components/TextEditor'
+import TextEditor from '../../components/TextEditor';
 import Login from '../../components/Login';
 
 const Doc = () => {
@@ -56,8 +56,20 @@ const Doc = () => {
 					className='rounded-full cursor-pointer h-10 w-10 ml-2'
 				/>
 			</header>
+
+			<TextEditor />
 		</div>
 	);
 };
 
 export default Doc;
+
+export async function getServerSideProps(context) {
+	const session = await getSession(context);
+
+	return {
+		props: {
+			session,
+		},
+	};
+}
